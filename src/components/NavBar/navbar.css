@@ -1,0 +1,24 @@
+.nav {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    
+}
+
+.navbar-brand {
+    margin-left: 65px;
+}
+
+.div-nav {
+    margin-left: 650px;
+}
+
+.navbar-nav {
+    padding: 9px;
+}
+
+.nav-link {
+    list-style: none;
+}
+
