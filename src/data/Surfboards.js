@@ -1,4 +1,4 @@
-const surfBoards = [
+const surfboards = [
   
       {
         "id": 1,
@@ -172,3 +172,12 @@ const surfBoards = [
         "precio": 859.99
     } 
     ]
+    
+    
+    export const  getSurfboards = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(surfboards)
+          }, 1000 )
+        } )
+    } 

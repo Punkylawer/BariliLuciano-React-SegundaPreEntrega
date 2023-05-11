@@ -1,18 +1,21 @@
+/* Imports. */
+
+import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'; 
-import './App.css';
-import ItemCounter from './components/ItemCounter/ItemCounter';
+import ItemCount from './components/ItemCount/ItemCount';
 
 
-/* Crear los siguientes componentes: ItemListContainer, CartWidget, NavBar */
-  
+/* Función App */
+
 function App() {
   return (
     <>
         <div className='app'>   
           <NavBar />
           <ItemListContainer saludo={'Bienvenidos y Buenas Olas :)'}/>
-          <ItemCounter stock={20} />
+          <ItemCount stock={20} onAdd={(count) => console.log('La cantidad agregada al carrito es : ',count) }/>
+        
           
       </div>
     </>
