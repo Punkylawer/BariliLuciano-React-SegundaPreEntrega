@@ -1,3 +1,7 @@
+.container-contador {
+  width: 250px;
+}
+
 .boton-resta,
 .boton-suma {
   margin: 10px;
@@ -5,4 +9,8 @@
 
 .p-contador {
 margin-left: 10px;
+}
+
+.botones-contador {
+  margin-left: 65px;
 }

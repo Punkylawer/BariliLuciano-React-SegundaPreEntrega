@@ -23,14 +23,14 @@ export default function ItemCount({ stock, onAdd}) {
 
     return (
         <div className="d-flex justify-content-center align-items-center mt-5">
-            <div className="container-contador">
+            <div className="container-contador border border-primary rounded-3">
                     <div className="botones-contador d-flex align-items-center">
-                        <button className='btn btn-sm btn-secondary boton-resta' onClick={handleResta}>{' '} - {' '}</button>
+                        <button className='btn btn-sm btn-primary boton-resta' onClick={handleResta}>{' '} - {' '}</button>
                         <p className='p-contador' >{count}</p>
-                        <button className='btn btn-sm btn-secondary boton-suma' onClick={handleAdd}>{' '} + {' '}</button>
+                        <button className='btn btn-sm btn-primary boton-suma' onClick={handleAdd}>{' '} + {' '}</button>
                     </div>
                     <div className="d-flex justify-content-center mt-3">
-                        <button className="btn btn-primary btn-md boton-carrito" onClick={() => onAdd(count)}>
+                        <button className="btn btn-success btn-md boton-carrito" onClick={() => onAdd(count)}>
                             Agregar al carrito
                         </button>
                     </div>
@@ -40,5 +40,3 @@ export default function ItemCount({ stock, onAdd}) {
     )
 }
 
-//Puntos a tener en cuenta
-// 1 - El contador del carrito tiene que empezar con el número 1 y tener un límite de máximo 15 unidades.

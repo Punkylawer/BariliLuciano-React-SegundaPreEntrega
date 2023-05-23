@@ -1,4 +1,5 @@
 import Item from "../Item/Item";
+import ListaItem from './ListaItem.css'
 
 const ItemList = ({surfboards}) => {
     return (

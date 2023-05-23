@@ -1,9 +1,12 @@
 import React from "react";
+import './Item.css';
+import { Link } from "react-router-dom";
 
 export default function Item({ id, title, categoria, dimensiones, stock, imagen, precio}) {
 
         return (
-            <article className="CardItem"> 
+        <div className="col-lg-6 col-md-12"> 
+            <article className="item-card CardItem border rounded shadow-sm mt-4 mb-2"> 
                 <header className="Header">
                     <h2 className="ItemHeaderTitle">
                         {title}
@@ -14,9 +17,9 @@ export default function Item({ id, title, categoria, dimensiones, stock, imagen,
                     <h4 className="ItemHeaderDimensiones"> 
                         {dimensiones}
                     </h4>
-                <picture>
+                <div className="item-card_img">
                     <img src={imagen} alt={title} className="ItemImg" />
-                </picture>
+                </div>
                 <section>
                     <p className="Info">
                         Precio: U$S{precio}
@@ -26,21 +29,13 @@ export default function Item({ id, title, categoria, dimensiones, stock, imagen,
                     </p>
                 </section>
                 <footer className="ItemFooter">
-                    <button className="Option"> Ver detalle</button>
+                <Link to={`/Item/${id}`} className="Option">Ver Detalle</Link>
+                    
 
                 </footer>
                 </header>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             </article>
+        </div>
         )
 
 }
