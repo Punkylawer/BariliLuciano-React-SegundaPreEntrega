@@ -8,7 +8,9 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Carousel from './components/Carousel/Carousel';
 import Footer from './components/Footer/Footer';
 import InstaCount from './components/InstaCount/InstaCount';
-
+import Contacto from './components/Contacto/Contacto';
+import { CartProvider } from './context/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 /* Función App */
@@ -16,7 +18,8 @@ import InstaCount from './components/InstaCount/InstaCount';
 function App() {
   return (
     <>
-        <div className='app'>   
+        <div className='app'>
+        <CartProvider>   
         <NavBar />
         <br />
         <br />
@@ -27,9 +30,12 @@ function App() {
           <Route path='/' element={<InstaCount />} />
           <Route path='/categoria/:category' element={<ItemListContainer /> } /> 
           <Route path='/Item/:itemId' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart/>} />
+          <Route path='/contacto' element={<Contacto /> } /> 
           <Route path='*' element={<h1>404 NOT FOUND</h1>} />
         </Routes>
         <Footer />
+        </CartProvider>
       </div>
     </>
   )    

@@ -4,6 +4,9 @@ import ItemDetail from "../ItemDetail/ItemDetail.jsx";
  import {useParams} from 'react-router-dom';
 
 
+ 
+ 
+ 
  export default function ItemDetailContainer() {
     const [surfboards, setSurfboards] = useState(null)
 
@@ -26,3 +29,4 @@ import ItemDetail from "../ItemDetail/ItemDetail.jsx";
         </div>
     )
 }
+

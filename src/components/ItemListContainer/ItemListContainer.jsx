@@ -1,10 +1,11 @@
 /* Imports */
 import React, { useState, useEffect } from "react";
-import { getSurfboards } from "../../data/Surfboards";
-import ItemList from '../ItemList/ItemList';
-import { getSurfboardByCategory } from "../../data/Surfboards"; 
+import ItemList from '../ItemList/ItemList'; 
 import {useParams} from 'react-router-dom';
 import './ItemListContainer.css';
+import { collection, getDocs } from "firebase/firestore";
+
+import { db } from "../../services/firebaseConfig";
 
     
 /* Función ItemListContainer */
@@ -14,14 +15,17 @@ export default function ItemListContainer({saludo}) {
     const {category} = useParams()
     
     useEffect(() => {
-        const asyncFunc = category ? getSurfboardByCategory : getSurfboards
+        const productosRef = collection(db, "surfboards");
+        
+        getDocs(productosRef)
+            .then((resp) => {
 
-        asyncFunc(category)
-            .then(response => {
-                setSurfboards(response)
-            })
-            .catch(error => {
-                console.error(error)
+                setSurfboards(
+                    resp.docs.map((doc) => {
+                        return { ...doc.data(),id: doc.id}
+                    }
+                    )
+                )
             })
     }, [category])
 

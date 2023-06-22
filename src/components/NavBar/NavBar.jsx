@@ -36,23 +36,8 @@ export default function NavBar() {
                     </li>
                     </ul>
                 </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    SHOP
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="shopDropdown">
-                    <li><a className="dropdown-item" href="#">Boardbags</a></li>
-                    <li><a className="dropdown-item" href="#">Leashes</a></li>
-                    <li><a className="dropdown-item" href="#">Wetsuits</a></li>
-                    <li><a className="dropdown-item" href="#">Fins</a></li>
-                    </ul>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">BLOG</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">NOSOTROS</a>
-                </li>
+                <li><Link className="nav-link" to={'/nosotros'}>NOSOTROS</Link></li>
+                <li><Link className="nav-link" to={'/contacto'}>CONTACTO</Link></li>
                 </ul>
                 <CartWidget />
             </div>
